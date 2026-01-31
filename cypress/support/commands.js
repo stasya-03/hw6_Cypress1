@@ -15,6 +15,12 @@
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+Cypress.Commands.add("login", (login, password) => {
+  cy.contains("Log in").click();
+  cy.get("#mail").type(login);
+  cy.get("#pass").type(password);
+  cy.contains("Submit").click();
+});
 //
 //
 // -- This is a dual command --
