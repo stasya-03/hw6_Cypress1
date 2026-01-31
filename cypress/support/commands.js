@@ -21,6 +21,16 @@ Cypress.Commands.add("login", (login, password) => {
   cy.get("#pass").type(password);
   cy.contains("Submit").click();
 });
+
+Cypress.Commands.add("openMainPage", () => {
+  cy.visit("/");
+  cy.contains("Books list").should("be.visible");
+});
+
+Cypress.Commands.add("shouldBeLoggedInApp", (email) => {
+  cy.contains(`Добро пожаловать ${email}`).should("be.visible");
+});
+
 //
 //
 // -- This is a dual command --
