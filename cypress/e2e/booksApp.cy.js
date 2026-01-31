@@ -56,7 +56,7 @@ describe("Favorite books tests", () => {
     cy.contains("Add to favorite").should("be.visible");
   });
 
-  it.skip("Add book to favorite from adding new book", () => {
+  it("Add book to favorite from adding new book", () => {
     const titleNewBook = "The Lord of the Rings";
     const author = "J.R.R. Tolkien";
 
